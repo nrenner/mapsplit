@@ -195,7 +195,9 @@ public class MapSplit {
 		// start with tile 1,1 and fill region...
 		Stack<Integer> stack = new Stack<Integer>();
 		stack.push(1 + 1 * sizeX);
-	
+
+System.out.println("sizeX = " + sizeX + ", sizeY = " + sizeY + ", helperSet: " + helperSet);
+
 		// fill all tiles that are reachable by a 4-neighbourhood
 		while (!stack.isEmpty()) {
 			int val = stack.pop();
@@ -336,6 +338,7 @@ public class MapSplit {
 		// TODO check/verify if 8 tiles is ok or if there might be corner-cases with only 4 tiles
 		// with more than 8 (or 4?!) tiles in the list we might have a "hole"
 		if (tileList.size() >= 8) {
+System.out.println("way = " + way.getId() + ", nodes = " + way.getWayNodes().size() + ", tileList = " + tileList);
 			checkAndFill(tileList);
 		}
 			
